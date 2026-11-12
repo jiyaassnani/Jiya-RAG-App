@@ -126,7 +126,18 @@ if files and st.button("Build knowledge base"):
             f"from {len(files)} file(s)."
         )
 
+
+# ---- Clear Knowledge Base ----
+if st.button("🗑️ Clear Knowledge Base"):
+    st.session_state.pop("chunks", None)
+    st.session_state.pop("index", None)
+    st.success("Knowledge base cleared successfully!")
+
+
+
 # Ask questions
+
+
 question = st.text_input(
     "Ask a question about your documents:"
 )
